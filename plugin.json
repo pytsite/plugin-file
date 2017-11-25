@@ -1,0 +1,27 @@
+{
+  "name": "file",
+  "version": "1.0",
+  "description": {
+    "en": "File",
+    "ru": "File",
+    "uk": "File"
+  },
+  "url": "https://github.com/pytsite/plugin-file",
+  "author": {
+    "name": "Alexander Shepetko",
+    "email": "a@shepetko.com",
+    "url": "https://shepetko.com"
+  },
+  "requires": {
+    "packages": [],
+    "plugins": [
+      "auth",
+      "assetman",
+      "js_load_image",
+      "jquery",
+      "jquery_ui",
+      "http_api",
+      "widget"
+    ]
+  }
+}
