@@ -1,4 +1,4 @@
-"""PytSIte File API
+"""PytSIte File Plugin API Functions
 """
 import os as _os
 import magic as _magic

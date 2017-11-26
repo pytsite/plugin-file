@@ -1,4 +1,4 @@
-"""Abstract Image Driver.
+"""Abstract File Driver
 """
 from abc import ABC as _ABC, abstractmethod as _abstractmethod
 from . import _model

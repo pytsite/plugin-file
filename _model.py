@@ -1,4 +1,4 @@
-"""File Model.
+"""PytSite File Plugin Models
 """
 from typing import Any as _Any
 from abc import ABC as _ABC, abstractmethod as _abstractmethod

@@ -1,4 +1,4 @@
-"""PytSite File Errors.
+"""PytSite File Plugin Errors
 """
 
 __author__ = 'Alexander Shepetko'
