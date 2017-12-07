@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.1.1 (2017-12-07)
+
+Fixed init code.
+
+
 ### 1.1 (2017-11-26)
 
 Part of the plugin moved to separate plugin `file_ui`.
