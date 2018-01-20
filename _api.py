@@ -60,9 +60,10 @@ def create(source: str, name: str = None, description: str = None, propose_path:
             data = f.read()
             tmp_file.write(data)
 
-        if not name:
+        if name is None:
             name = _os.path.basename(source)
-        if not description:
+
+        if description is None:
             description = 'Created from local file ' + source
 
     # Close temporary file

@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.2.2 (2018-01-20)
+
+Automatic compulsory file's description removed.
+
+
 ### 1.2.1 (2018-01-20)
 
 `AbstractFile.description` property added.
