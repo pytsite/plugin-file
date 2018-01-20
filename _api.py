@@ -51,7 +51,8 @@ def create(source: str, name: str = None, description: str = None, propose_path:
 
         if not name:
             name = _urlparse(source).path.split('/')[-1]
-        if not description:
+
+        if description is None:
             description = 'Downloaded from ' + source
 
     # Local file
@@ -60,7 +61,7 @@ def create(source: str, name: str = None, description: str = None, propose_path:
             data = f.read()
             tmp_file.write(data)
 
-        if name is None:
+        if not name:
             name = _os.path.basename(source)
 
         if description is None:
