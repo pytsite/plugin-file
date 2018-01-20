@@ -1,12 +1,12 @@
 """PytSite File Plugin Models
 """
-from typing import Any as _Any
-from abc import ABC as _ABC, abstractmethod as _abstractmethod
-from pytsite import util as _util
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from typing import Any as _Any
+from abc import ABC as _ABC, abstractmethod as _abstractmethod
+from pytsite import util as _util
 
 
 class AbstractFile(_ABC):
@@ -55,6 +55,18 @@ class AbstractFile(_ABC):
     @local_path.setter
     def local_path(self, value: str):
         self.set_field('local_path', value)
+
+    @property
+    def description(self) -> str:
+        """Get description of the file
+        """
+        return self.get_field('description')
+
+    @description.setter
+    def description(self, value: str):
+        """Set description of the file
+        """
+        self.set_field('description', value)
 
     @property
     def mime(self) -> str:

@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.2.1 (2018-01-20)
+
+`AbstractFile.description` property added.
+
+
 ### 1.2 (2017-12-13)
 
 Support for PytSite-7.0.
