@@ -1,16 +1,18 @@
 """PytSIte File Plugin API Functions
 """
+__author__ = 'Alexander Shepetko'
+__email__ = 'a@shepetko.com'
+__license__ = 'MIT'
+
 import os as _os
 import magic as _magic
-from typing import Optional as _Optional, Iterable as _Iterable
+from typing import Optional as _Optional
 from urllib.request import urlopen as _urlopen, Request as _urllib_request
 from urllib.parse import urlparse as _urlparse
 from pytsite import reg as _reg, util as _util, validation as _validation
 from . import _model, _driver, _error
 
-__author__ = 'Alexander Shepetko'
-__email__ = 'a@shepetko.com'
-__license__ = 'MIT'
+
 
 _current_driver = None
 
@@ -89,7 +91,7 @@ def create(source: str, name: str = None, description: str = None, propose_path:
 
 
 def get(uid: str, suppress_exception: bool = False) -> _Optional[_model.AbstractFile]:
-    """Get file by UID
+    """Get file
     """
     try:
         return get_driver().get(uid)
@@ -98,19 +100,3 @@ def get(uid: str, suppress_exception: bool = False) -> _Optional[_model.Abstract
             return None
 
         raise e
-
-
-def get_multiple(uids: _Iterable, suppress_exceptions: bool = False) -> _Iterable[_model.AbstractFile]:
-    """Get multiple files by UIDs
-    """
-    r = []
-
-    if not uids:
-        return r
-
-    for uid in uids:
-        file = get(uid, suppress_exceptions)
-        if file:
-            r.append(file)
-
-    return r

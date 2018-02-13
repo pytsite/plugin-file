@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.3 (2018-02-14)
+
+`get_multiple()` function removed.
+
+
 ### 1.2.3 (2018-01-20)
 
 Automatic compulsory file's description removed, step 2.
