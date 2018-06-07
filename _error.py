@@ -10,7 +10,7 @@ class Error(Exception):
     pass
 
 
-class FileNotFound(Error):
+class FileNotFound(FileNotFoundError, Error):
     pass
 
 

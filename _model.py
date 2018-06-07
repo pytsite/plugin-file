@@ -12,49 +12,61 @@ from pytsite import util as _util
 class AbstractFile(_ABC):
     @property
     def uid(self) -> str:
-        """Get UID of the file.
+        """Get UID of the file
         """
         return self.get_field('uid')
 
     @uid.setter
     def uid(self, value: str):
-        """Set UID of the file.
+        """Set UID of the file
         """
-        raise RuntimeError("'uid' property is read-only.")
+        raise RuntimeError("'uid' property is read-only")
 
     @property
     def length(self) -> int:
-        """Get length of the file in bytes.
+        """Get length of the file in bytes
         """
         return self.get_field('length')
 
     @length.setter
     def length(self, value: int):
-        """Set length of the file in bytes.
+        """Set length of the file in bytes
         """
         self.set_field('length', value)
 
     @property
     def path(self) -> str:
-        """Get path of the file relative to storage.
+        """Get path of the file relative to storage
         """
         return self.get_field('path')
 
     @path.setter
     def path(self, value: str):
-        """Set path of the file relative to storage.
+        """Set path of the file relative to storage
         """
         self.set_field('path', value)
 
     @property
     def local_path(self) -> str:
-        """Get path of the file accessible via local filesystem.
+        """Get path of the file accessible via local filesystem
         """
         return self.get_field('local_path')
 
     @local_path.setter
     def local_path(self, value: str):
         self.set_field('local_path', value)
+
+    @property
+    def name(self) -> str:
+        """Get name of the file
+        """
+        return self.get_field('name')
+
+    @name.setter
+    def name(self, value: str):
+        """Set name of the file
+        """
+        self.set_field('name', value)
 
     @property
     def description(self) -> str:
@@ -70,18 +82,18 @@ class AbstractFile(_ABC):
 
     @property
     def mime(self) -> str:
-        """Get MIME of the file.
+        """Get MIME of the file
         """
         return self.get_field('mime')
 
     @mime.setter
     def mime(self, value: str):
-        """Set MIME of the file.
+        """Set MIME of the file
         """
         self.set_field('mime', value)
 
     def get_url(self, **kwargs) -> str:
-        """Get URL of the file.
+        """Get URL of the file
         """
         return self.get_field('url', **kwargs)
 
@@ -92,13 +104,13 @@ class AbstractFile(_ABC):
         return self.get_url()
 
     def get_thumb_url(self, **kwargs) -> str:
-        """Get URL of thumbnail of the file.
+        """Get URL of thumbnail of the file
         """
         return self.get_field('thumb_url', **kwargs)
 
     @property
     def thumb_url(self) -> str:
-        """Shortcut.
+        """Shortcut
         """
         return self.get_thumb_url()
 

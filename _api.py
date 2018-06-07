@@ -9,10 +9,9 @@ import magic as _magic
 from typing import Optional as _Optional
 from urllib.request import urlopen as _urlopen, Request as _urllib_request
 from urllib.parse import urlparse as _urlparse
+from mimetypes import guess_extension as _guess_extension
 from pytsite import reg as _reg, util as _util, validation as _validation
 from . import _model, _driver, _error
-
-
 
 _current_driver = None
 
@@ -80,6 +79,10 @@ def create(source: str, name: str = None, description: str = None, propose_path:
 
     # Determining file's MIME type
     mime = _magic.from_file(tmp_file_path, True)
+
+    # Add an extension to the name
+    if not _os.path.splitext(name)[1]:
+        name += _guess_extension(mime)
 
     # Ask driver to store file content into its storage
     file_object = get_driver().create(tmp_file_path, mime, name, description, propose_path, **kwargs)

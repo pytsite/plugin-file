@@ -4,6 +4,12 @@
 ## Changelog
 
 
+### 1.4 (2018-06-07)
+
+- New routing rule `file@download` added.
+- Filename extension detection added.
+
+
 ### 1.3 (2018-02-14)
 
 `get_multiple()` function removed.
