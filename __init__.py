@@ -9,8 +9,16 @@ from . import _model as model, _error as error, _driver as driver
 from ._api import create, get
 
 
+def plugin_load():
+    from plugins import assetman
+
+    assetman.register_package(__name__)
+    assetman.t_copy(__name__)
+
+
 def plugin_load_wsgi():
     from pytsite import router
+
     from . import _controllers
 
     router.handle(_controllers.Download, '/file/download/<uid>', 'file@download')

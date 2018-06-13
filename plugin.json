@@ -1,6 +1,6 @@
 {
   "name": "file",
-  "version": "1.4",
+  "version": "1.5",
   "description": {
     "en": "File",
     "ru": "File",
@@ -11,5 +11,10 @@
     "name": "Alexander Shepetko",
     "email": "a@shepetko.com",
     "url": "https://shepetko.com"
+  },
+  "requires": {
+    "plugins": [
+      "assetman>=1.7"
+    ]
   }
 }

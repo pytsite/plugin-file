@@ -4,6 +4,13 @@
 ## Changelog
 
 
+### 1.5 (2018-06-13)
+
+- `model.AbstractFile.local_path` field and property renamed to
+  `storage_path`.
+- 27 type related thumbnails added.
+
+
 ### 1.4 (2018-06-07)
 
 - New routing rule `file@download` added.

@@ -6,7 +6,22 @@ __license__ = 'MIT'
 
 from typing import Any as _Any
 from abc import ABC as _ABC, abstractmethod as _abstractmethod
-from pytsite import util as _util
+from os import path as _path
+from pytsite import util as _util, router as _router
+from plugins import assetman as _assetman
+
+_THUMBS = ('ai', 'avi', 'css', 'csv', 'dbf', 'doc', 'dwg', 'exe', 'file', 'fla', 'html', 'iso', 'jpg', 'json', 'js',
+           'mp3', 'mp4', 'pdf', 'png', 'ppt', 'psd', 'rtf', 'svg', 'txt', 'xls', 'xml', 'zip')
+
+_EXT_THUMB = {
+    'htm': 'html',
+    'jpe': 'jpg',
+    'jpeg': 'jpg',
+    'docx': 'doc',
+    'odt': 'doc',
+    'xlsx': 'xls',
+    'ods': 'xls',
+}
 
 
 class AbstractFile(_ABC):
@@ -47,14 +62,25 @@ class AbstractFile(_ABC):
         self.set_field('path', value)
 
     @property
-    def local_path(self) -> str:
-        """Get path of the file accessible via local filesystem
+    def storage_path(self) -> str:
+        """Get path of the file in the storage
         """
-        return self.get_field('local_path')
+        return self.get_field('storage_path')
 
-    @local_path.setter
-    def local_path(self, value: str):
-        self.set_field('local_path', value)
+    @storage_path.setter
+    def storage_path(self, value: str):
+        """Set path of the file in the storage
+        """
+        self.set_field('storage_path', value)
+
+    @property
+    def ext(self) -> str:
+        """Get extension of the file
+        """
+        if not self.path:
+            raise ValueError('File path is empty')
+
+        return _path.splitext(self.path)[1]
 
     @property
     def name(self) -> str:
@@ -99,12 +125,12 @@ class AbstractFile(_ABC):
 
     @property
     def url(self) -> str:
-        """Shortcut.
+        """Shortcut
         """
         return self.get_url()
 
     def get_thumb_url(self, **kwargs) -> str:
-        """Get URL of thumbnail of the file
+        """Get thumbnail URL of the file
         """
         return self.get_field('thumb_url', **kwargs)
 
@@ -114,9 +140,19 @@ class AbstractFile(_ABC):
         """
         return self.get_thumb_url()
 
-    @_abstractmethod
     def get_field(self, field_name: str, **kwargs) -> _Any:
-        pass
+        # File download URL
+        if field_name == 'url':
+            return _router.rule_url('file@download', {'uid': self.uid})
+
+        elif field_name == 'thumb_url':
+            ext = self.ext.replace('.', '')
+            if ext in _EXT_THUMB:
+                ext = _EXT_THUMB[ext]
+
+            return _assetman.url('file@thumbs/{}.svg'.format(ext if ext in _THUMBS else 'file'))
+
+        raise NotImplementedError()
 
     @_abstractmethod
     def set_field(self, field_name: str, value, **kwargs):

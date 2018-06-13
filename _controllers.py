@@ -12,4 +12,4 @@ class Download(_routing.Controller):
     def exec(self):
         f = _api.get(self.arg('uid'))
 
-        return self.file(f.local_path, f.name, f.mime)
+        return self.file(f.storage_path, f.name, f.mime)
