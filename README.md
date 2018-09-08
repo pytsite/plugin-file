@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.5.1 (2018-09-08)
+
+JPEG files thumbs association fixed.
+
+
 ### 1.5 (2018-06-13)
 
 - `model.AbstractFile.local_path` field and property renamed to
