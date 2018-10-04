@@ -1,6 +1,6 @@
 {
   "name": "file",
-  "version": "1.5.1",
+  "version": "1.6",
   "description": {
     "en": "File",
     "ru": "File",
@@ -8,13 +8,14 @@
   },
   "url": "https://github.com/pytsite/plugin-file",
   "author": {
-    "name": "Alexander Shepetko",
+    "name": "Oleksandr Shepetko",
     "email": "a@shepetko.com",
     "url": "https://shepetko.com"
   },
   "requires": {
+    "pytsite": "8.x",
     "plugins": [
-      "assetman>=1.7"
+      "assetman 3.x"
     ]
   }
 }

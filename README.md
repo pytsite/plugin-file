@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.6 (2018-10-04)
+
+Support of `pytsite-8.x` and `assetman-3.x`.
+
+
 ### 1.5.1 (2018-09-08)
 
 JPEG files thumbs association fixed.

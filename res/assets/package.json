@@ -1,0 +1,7 @@
+{
+  "name": "@pytsite/file",
+  "main": "empty.js",
+  "dependencies": {
+    "copy-webpack-plugin": "4.x"
+  }
+}
