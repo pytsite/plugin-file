@@ -1,6 +1,6 @@
 {
   "name": "file",
-  "version": "1.6",
+  "version": "1.7",
   "description": {
     "en": "File",
     "ru": "File",
@@ -13,9 +13,9 @@
     "url": "https://shepetko.com"
   },
   "requires": {
-    "pytsite": "8.x",
-    "plugins": [
-      "assetman 3.x"
-    ]
+    "pytsite": ">=8",
+    "plugins": {
+      "assetman": "4.x"
+    }
   }
 }
