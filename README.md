@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.8 (2018-10-22)
+
+Support of `assetman-5.x`.
+
+
 ### 1.7 (2018-10-12)
 
 Support of `assetman-4.x`.

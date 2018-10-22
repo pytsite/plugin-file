@@ -1,6 +1,6 @@
 {
   "name": "file",
-  "version": "1.7",
+  "version": "1.8",
   "description": {
     "en": "File",
     "ru": "File",
@@ -15,7 +15,7 @@
   "requires": {
     "pytsite": ">=8",
     "plugins": {
-      "assetman": "4.x"
+      "assetman": "5.x"
     }
   }
 }
