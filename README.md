@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.8.1 (2018-10-29)
+
+Automatic assets building fixed.
+
+
 ### 1.8 (2018-10-22)
 
 Support of `assetman-5.x`.

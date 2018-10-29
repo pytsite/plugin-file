@@ -15,3 +15,9 @@ def plugin_load_wsgi():
     from . import _controllers
 
     router.handle(_controllers.Download, '/file/download/<uid>', 'file@download')
+
+
+def plugin_install():
+    from plugins import assetman
+
+    assetman.build(__name__)
