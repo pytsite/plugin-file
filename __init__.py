@@ -7,6 +7,7 @@ __license__ = 'MIT'
 # Public API
 from . import _model as model, _error as error, _driver as driver
 from ._api import create, get
+from ._model import AbstractFile, AbstractImage
 
 
 def plugin_load_wsgi():

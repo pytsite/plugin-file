@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.8.2 (2019-01-23)
+
+Models moved to package level.
+
+
 ### 1.8.1 (2018-10-29)
 
 Automatic assets building fixed.
