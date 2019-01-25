@@ -155,7 +155,7 @@ class AbstractFile(_ABC):
             return _router.rule_url('file@download', {'uid': self.uid})
 
         elif field_name == 'thumb_url':
-            ext = self.ext.replace('.', '')
+            ext = self.ext.replace('.', '').lower()
             if ext in _EXT_THUMB:
                 ext = _EXT_THUMB[ext]
 

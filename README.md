@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.8.3 (2019-01-25)
+
+Icons detection issue fixed.
+
+
 ### 1.8.2 (2019-01-23)
 
 Models moved to package level.
