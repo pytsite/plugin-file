@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.9 (2019-04-27)
+
+Support of `assetman-5.2`.
+
+
 ### 1.8.3 (2019-01-25)
 
 Icons detection issue fixed.
